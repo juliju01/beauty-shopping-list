@@ -21,4 +21,15 @@ A aplicação deve ser codificada em html, css e javascript. Deve conter os segu
 8.	A lista deve ser salva no "localStorage" do navegador (incluindo os produtos que já foram realizados), e deve ser carregada sempre que a página for reaberta.
 9. Afim de trazer elementos externos de forma dinâmica para nossa aplicação, pode-se utilizar a API https://api.giphy.com/v1/gifs/search?api_key=dpPu1kIHwa3fxoQiH9lzTfmUkMgEjtuS&q=hamburguer para criar uma experiencia customizada para o usuário.
 
+# Resultado
+A resolução do projeto colocou em prática os aprendizados em:
+●	HTML: principais tags como head, meta, title, body, div, h1, form, input, button, ul, li. Atributos de tags como class, id, type. Inclusão de arquivos de estilos (css) e de script (js) na página.
+●	CSS: estilizar a página, os botões, inputs, alterar atributos dos elementos da tela de acordo com a interação do usuário para uma melhor experiência do usuário (UX).
+●	Javascript: variáveis, arrays, funções, manipulação do DOM (eventos, elementos e seus atributos), manipular objetos (JSON), utilizar o localStorage.
+
+# Contato
+https://www.linkedin.com/in/julianakroeger/
+julianakroeger@gmail.com
+
+
 
