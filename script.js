@@ -39,12 +39,12 @@ function criaElementoNaLista(nomeDoProduto) {
   span.innerText = nomeDoProduto;
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
-  const botaoExcluir = document.createElement("button");
-  botaoExcluir.innerText = "X";
+  const botaoDeletar= document.createElement("button");
+  botaoDeletar.innerText = "x";
 
   li.appendChild(checkbox);
   li.appendChild(span);
-  li.append(botaoExcluir);
+  li.append(botaoDeletar);
 
   checkbox.addEventListener("click", (e) => {
     if (span.style.textDecoration == "line-through") {
@@ -53,7 +53,7 @@ function criaElementoNaLista(nomeDoProduto) {
       popup.style.display = "block";
     }
   });
-  botaoExcluir.onclick = (e) => {
+  botaoDeletar.onclick = (e) => {
     li.remove();
   };
 
@@ -64,14 +64,14 @@ function criaElementoNaLista(nomeDoProduto) {
   const valor = document.createElement("input");
   valor.type = "number";
 
-  const botaoFinaliza = document.createElement("button");
-  botaoFinaliza.type = "number";
-  botaoFinaliza.innerText = "Insira o valor";
+  const botaoItemJaComprado = document.createElement("button");
+  botaoItemJaComprado.type = "number";
+  botaoItemJaComprado.innerText = "Inserir o valor do produto (somente números, em reais)";
 
   popup.append(valor);
-  popup.append(botaoFinaliza);
+  popup.append(botaoItemJaComprado);
 
-  botaoFinaliza.addEventListener("click", () => {
+  botaoItemJaComprado.addEventListener("click", () => {
     popup.style.display = "none";
     const preco = document.createElement("span");
     preco.innerText = "R$" + valor.value;
@@ -84,6 +84,6 @@ botao.addEventListener("click", (event) => {
   if (valor != "") {
     criaElementoNaLista(valor);
   } else {
-    alert("Você deve digitar o nome do produto");
+    alert("Por favor, digite o nome do produto");
   }
 });

@@ -82,7 +82,7 @@ nav#menu h1 {
 
 #apresenta-filha2foto {
   flex: 1;
-  margin: 20px 50px 0 0;
+  margin: 25px 50px 0 0;
 }
 
 #apresenta-filha2foto img {
@@ -119,28 +119,27 @@ nav#menu h1 {
 }
 
 .adicionar-filha1 {
+  margin: 0 0 0 -30px;
   align-items: center;
-  background-color: #216969;
+  line-height: 150%;
 }
 
 ul li button {
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
-  font-size: 10pt;
+  font-size: 9pt;
   color:#3d3541;
-  padding: 1px;
-  border:#30BFB1 solid 1px;
-  border-radius: 5%;
+  margin: 0.5px;
+  border-radius: 8%;
   background-color:#30BFB1;
   cursor: pointer;
   }
   
   ul li button:hover {
     background-color:#f2ae30;
-    border-radius: 5%;
-    border:#BF7A24 solid 1px;
+    border-radius: 8%;
     color:#3d3541;
+    margin: 0.5px;
     transition: background-color 0.3s;
     font-weight: bold;
   }
