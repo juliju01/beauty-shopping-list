@@ -1,4 +1,8 @@
-//função para mostrar a div ou deixar oculta//
+// Beauty Shopping List //
+
+// Aplicação web para controle e cálculo de uma lista de compras //
+
+// Mostrar ou ocultar as div (página inicial / Iniciar ou completar lista //
 
 document.querySelector("#home").addEventListener("click", () => {
   escondeTodosAntesDeMostrar();
@@ -32,6 +36,24 @@ function criaElementoNaLista(nomeDoProduto) {
   let texto = document.createTextNode(nomeDoProduto);
   li.appendChild(texto);
   lista.appendChild(li);
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  const botaoExcluir = document.createElement("button");
+  botaoExcluir.innerText = "X";
+  li.appendChild(checkbox);
+  li.append(texto);
+  li.append(botaoExcluir);
+  botaoExcluir.onclick = (e) => {
+    li.remove();
+    checkbox.addEventListener("click", (e) => {
+      if (texto.style.textDecoration == "line-through") {
+        texto.style.textDecoration = "none";
+      } else {
+        texto.style.textDecoration = "line-through";
+        popup.style.display = "block";
+      }
+    });
+  };
 }
 
 botao.addEventListener("click", (event) => {
@@ -40,29 +62,6 @@ botao.addEventListener("click", (event) => {
     criaElementoNaLista(valor);
   } else {
     alert("Você deve digitar o nome do produto");
-  }
-});
-
-li.appendChil(checkbox);
-li.append(texto);
-li.append(botaoExcluir);
-
-const checkbox = document.createElement("input");
-checkbox.type = "checkbox";
-
-const botaoExcluir = document.createElement("button");
-botaoExcluir.innerText = "X";
-
-botaoExcluir.onclick = (e) => {
-  li.remove();
-};
-
-checkbox.addEventListener("click", (e) => {
-  if (texto.style.textDecoration == "line-through") {
-    texto.style.textDecoration = "none";
-  } else {
-    texto.style.textDecoration = "line-through";
-    popup.style.display = "block";
   }
 });
 
@@ -89,33 +88,33 @@ botaoFinaliza.addEventListener("click", () => {
 
 //local storage//
 
-let arrayDeLIS;
+let arrayDaLista;
 
 const inputText = document.querySelector("#texto");
 const envia = document.querySelector("#envia");
 const recebe = document.querySelector("#recebe");
 
-const array = JSON.parse(localStorage.getItem("arrayDeLIS"));
+const array = JSON.parse(localStorage.getItem("arrayDaLista"));
 if (array) {
-  arrayDeLIS = array;
+  arrayDaLista = array;
 } else {
-  arrayDeLIS = [];
+  arrayDaLista = [];
 }
 
-arrayDeLIS.forEach((valorInterno) => {
-  criaLI(valorInterno.valor);
+arrayDaLista.forEach((valorInterno) => {
+  fazLi(valorInterno.valor);
 });
 
 envia.addEventListener("click", () => {
   const value = inputText.value;
 
-  criaLI(value);
+  fazLi(value);
 
   arrayDeLIS.push({ valor: value });
-  localStorage.setItem("arrayDeLIS", JSON.stringify(arrayDeLIS));
+  localStorage.setItem("arrayDaLista", JSON.stringify(arrayDaLista));
 });
 
-function criaLI(valorInterno) {
+function fazLi(valorInterno) {
   const li = document.createElement("li");
   li.innerText = valorInterno;
   recebe.append(li);
