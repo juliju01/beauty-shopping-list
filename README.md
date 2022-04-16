@@ -29,7 +29,6 @@ A resolução do projeto colocou em prática os aprendizados em:
 
 # Contato
 https://www.linkedin.com/in/julianakroeger/
-julianakroeger@gmail.com
 
 
 
