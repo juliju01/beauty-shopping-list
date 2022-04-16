@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title> Beauty Shopping List  </title>
+    <link rel="shortcut icon" href="shoppinglist.ico"/>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&family=Roboto&display=swap');
+      </style>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+
+  <body>
+      
+  <!--cabeçalho e menu-->
+      <div id="interface">
+        <header> 
+            <div class="logo">
+              <a href="index.html"> <img id="logo" src="logo.png" height="32px"> </a>   
+               </div>
+            <nav id="menu">
+            <h1>Beauty Shopping List</h1>
+            <ul type="disc">
+              <li><button id="home"> Página inicial</button> </li>
+              <li><button id="inserirproduto"> Iniciar ou completar lista</button> </li>
+              <li><button id="calcular"> Calcular total</button></li>
+            </ul>
+          </nav>
+        </header>
+
+      <!--apresentação da lista de compras-->
+      <div id="inicialDiv" class="oculta">
+        <section>
+         <div id="apresentacao">
+            <div id="apresenta-filha1texto">        
+              <h1> Bem-vindo(a) à <em>Beauty Shopping List!</em> </h1>
+              <p>Agora você vai poder criar facilmente a sua lista de compras, sem medo de perder suas anotações por aí.
+              <p>Nunca foi tão fácil programar as suas compras e calcular as suas despesas em produtos de higiene e beleza.</p>
+              <p>Nosso objetivo é estimular o consumo consciente e tornar as suas compras ainda mais rápidas e inteligentes. 
+              <p> Comece agora mesmo a fazer a sua lista ou complete a sua lista já iniciada! </p>
+              <br> 
+            </div>
+            
+            <div id="apresenta-filha2foto">
+              <img src="beautyshoppinglist.jpg">
+            </div>
+       </div>
+      </section>
+  
+
+      <!--rodapé-->
+      <footer id="rodape">
+      <div id="creditofinal">
+        <p> Powered by DEVinHouse 2022 • Turma Audaces • Juliana Kroeger </p> 
+      </div>
+      </footer>
+  </div>
+
+ <!--inserindo produtos na lista-->
+<div id="produtoDiv" class="oculta" style="display: none;">
+  <div id="interface"> 
+    <div id="adicionar-mae">   
+        <div class="adicionar-filha1">
+          <label> Qual produto você quer adicionar à lista? </label>
+          <input type="text" name="produto" id="itemParaInserir" placeholder=" Digite o produto" size="20"/>
+          <button id="addItemParaInserir"> Adicionar </button>
+           <ul id="lista"> 
+        </ul>
+        </div>
+      </div> 
+     </div>
+  </div>
+  
+
+<!--Calcular total-->
+<div id="calcularDiv" class="oculta" style="display: none;">
+  Calcular total
+  R$ 00,00
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html> 
+                 

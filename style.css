@@ -1,0 +1,163 @@
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Plus Jakarta Sans','Roboto', Arial, sans-serif;
+  background-color:#30BFB1;
+  color: white;
+}
+
+#interface {
+  width: 800px;
+  height: auto;
+  margin: auto;
+  background-color:#216969;
+  box-shadow: 2px 2px 15px #665a6e;
+  border-radius: 5px;
+  display: flex;
+}
+
+/* Cabeçalho e menu de navegação */
+
+header {
+  height: 70px;
+  width: 800px;
+  top: 0px;
+  margin: auto;
+  position: fixed;
+  background-color: #82728c;
+  border-bottom: 3px solid #f2ae30;
+  display: flex;
+}
+
+#logo {
+  padding: 14px;
+  margin: 13px 0px 0px 20px;
+}
+
+nav#menu li {
+  display: inline-flex;
+  vertical-align: middle;
+  padding: 7px;
+  margin: 10px 0 0 10px;
+}
+
+nav#menu h1 {
+  display: none;
+}
+
+button {
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 8pt;
+  color: white;
+  padding: 3px 4px;
+  border:#30BFB1 solid 2px;
+  border-radius: 5%;
+  background-color:#665a6e;
+  cursor: pointer;
+  }
+  
+  button:hover {
+    background-color:#f2ae30;
+    border-radius: 5%;
+    border:#BF7A24 solid 2px;
+    color:#3d3541;
+    transition: background-color 0.3s;
+    font-weight: bold;
+  }
+
+/* Estilização da página de apresentação */
+
+#apresentacao {
+  width: 100%;
+  height: auto;
+  margin: 80px auto 0 auto;
+  display: flex;
+  padding: 10px 10px 0 10px;
+}
+
+#apresenta-filha1texto {
+  flex: 2;
+  margin: 20px 40px 20px 40px;
+}
+
+#apresenta-filha2foto {
+  flex: 1;
+  margin: 20px 50px 0 0;
+}
+
+#apresenta-filha2foto img {
+  width: 280px;
+  border-radius: 8%;
+  border: 3px solid #82728c;
+}
+
+#apresenta-filha1texto h1 {
+  font-size: 16pt;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1.5px 1.5px #3d3541;
+  text-align: left;
+  line-height: 150%;
+}
+
+#apresenta-filha1texto p {
+  font-size: 12pt;
+  color:#bfe7e3;
+  text-align: justify;
+  line-height: 150%;
+}
+
+/* Adicionando produtos à lista */
+
+#adicionar-mae {
+  width: 100%;
+  height: auto;
+  margin: 120px 20px 20px 20px;
+  display: flex;
+  padding: 10px 10px 0 10px;
+  justify-content: space-around;
+}
+
+.adicionar-filha1 {
+  align-items: center;
+  background-color: #216969;
+}
+
+li span {
+  background: white 50%;
+ }
+
+/* Total das compras que fica fixo na lateral direita */
+
+#totaldascompras {
+  flex: 1;
+  margin: 10px;
+}
+
+#inserirprodutonovo {
+  border-top: 2px solid rgba(120, 120, 120, 0.3);
+  height: 30%;
+  width: 100%;
+  display: flex;
+}
+
+/* Estilização do rodapé */
+
+#rodape {
+  width: 800px;
+  height: 50px;
+  margin: auto;
+  background-color:#f2ae30;
+  box-shadow: 2px 2px 15px #665a6e;
+  border-radius: 5px;
+  display: flex;
+}
+
+#creditofinal {
+  width: 800px;
+  font-size: 8pt;
+  color: #BF7A24;
+  padding: 6px;
+  vertical-align: middle;
+  text-align: center;
+}
