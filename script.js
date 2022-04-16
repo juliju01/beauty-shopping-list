@@ -25,7 +25,7 @@ function escondeTodosAntesDeMostrar() {
   });
 }
 
-//adicionando itens na lista//
+//Adicionando itens na lista//
 
 const input = document.querySelector("#itemParaInserir");
 const botao = document.querySelector("#addItemParaInserir");
@@ -33,27 +33,50 @@ const lista = document.querySelector("#lista");
 
 function criaElementoNaLista(nomeDoProduto) {
   const li = document.createElement("li");
-  let texto = document.createTextNode(nomeDoProduto);
-  li.appendChild(texto);
   lista.appendChild(li);
+
+  const span = document.createElement("span");
+  span.innerText = nomeDoProduto;
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   const botaoExcluir = document.createElement("button");
   botaoExcluir.innerText = "X";
+
   li.appendChild(checkbox);
-  li.append(texto);
+  li.appendChild(span);
   li.append(botaoExcluir);
+
+  checkbox.addEventListener("click", (e) => {
+    if (span.style.textDecoration == "line-through") {
+      span.style.textDecoration = "none";
+    } else {
+      popup.style.display = "block";
+    }
+  });
   botaoExcluir.onclick = (e) => {
     li.remove();
-    checkbox.addEventListener("click", (e) => {
-      if (texto.style.textDecoration == "line-through") {
-        texto.style.textDecoration = "none";
-      } else {
-        texto.style.textDecoration = "line-through";
-        popup.style.display = "block";
-      }
-    });
   };
+
+  const popup = document.createElement("li");
+  popup.style.display = "none";
+  lista.append(popup);
+
+  const valor = document.createElement("input");
+  valor.type = "number";
+
+  const botaoFinaliza = document.createElement("button");
+  botaoFinaliza.type = "number";
+  botaoFinaliza.innerText = "Insira o valor";
+
+  popup.append(valor);
+  popup.append(botaoFinaliza);
+
+  botaoFinaliza.addEventListener("click", () => {
+    popup.style.display = "none";
+    const preco = document.createElement("span");
+    preco.innerText = "R$" + valor.value;
+    span.style.textDecoration = "line-through";
+  });
 }
 
 botao.addEventListener("click", (event) => {
@@ -64,58 +87,3 @@ botao.addEventListener("click", (event) => {
     alert("Você deve digitar o nome do produto");
   }
 });
-
-const popup = document.createElement("li");
-popup.style.display = "none";
-lista.append(popup);
-
-const valor = document.createElement("input");
-valor.type = "number";
-
-const botaoFinaliza = document.createElement("button");
-botaoFinaliza.type = "number";
-botaoFinaliza.innerText = "Insira o valor";
-
-popup.append(valor);
-popup.append(botaoFinaliza);
-
-botaoFinaliza.addEventListener("click", () => {
-  popup.style.display = "none";
-  const preco = document.createElement("span");
-  preco.innerText = "R$" + valor.value;
-  texto.inserAdjacentElement("afterend", preco);
-});
-
-//local storage//
-
-let arrayDaLista;
-
-const inputText = document.querySelector("#texto");
-const envia = document.querySelector("#envia");
-const recebe = document.querySelector("#recebe");
-
-const array = JSON.parse(localStorage.getItem("arrayDaLista"));
-if (array) {
-  arrayDaLista = array;
-} else {
-  arrayDaLista = [];
-}
-
-arrayDaLista.forEach((valorInterno) => {
-  fazLi(valorInterno.valor);
-});
-
-envia.addEventListener("click", () => {
-  const value = inputText.value;
-
-  fazLi(value);
-
-  arrayDeLIS.push({ valor: value });
-  localStorage.setItem("arrayDaLista", JSON.stringify(arrayDaLista));
-});
-
-function fazLi(valorInterno) {
-  const li = document.createElement("li");
-  li.innerText = valorInterno;
-  recebe.append(li);
-}

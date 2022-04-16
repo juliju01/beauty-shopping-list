@@ -4,9 +4,9 @@ body {
   color: white;
 }
 
-#interface {
+.interface {
   width: 800px;
-  height: auto;
+  min-height: 480px;
   margin: auto;
   background-color:#216969;
   box-shadow: 2px 2px 15px #665a6e;
@@ -43,7 +43,7 @@ nav#menu h1 {
   display: none;
 }
 
-button {
+#menu ul li button {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -56,7 +56,7 @@ button {
   cursor: pointer;
   }
   
-  button:hover {
+  #menu ul li button:hover {
     background-color:#f2ae30;
     border-radius: 5%;
     border:#BF7A24 solid 2px;
@@ -123,9 +123,35 @@ button {
   background-color: #216969;
 }
 
-li span {
-  background: white 50%;
- }
+ul li button {
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 10pt;
+  color:#3d3541;
+  padding: 1px;
+  border:#30BFB1 solid 1px;
+  border-radius: 5%;
+  background-color:#30BFB1;
+  cursor: pointer;
+  }
+  
+  ul li button:hover {
+    background-color:#f2ae30;
+    border-radius: 5%;
+    border:#BF7A24 solid 1px;
+    color:#3d3541;
+    transition: background-color 0.3s;
+    font-weight: bold;
+  }
+
+
+
+
+
+
+
+
 
 /* Total das compras que fica fixo na lateral direita */
 
