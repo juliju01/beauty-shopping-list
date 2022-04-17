@@ -122,7 +122,17 @@ nav#menu h1 {
 .adicionar-filha1 {
   margin: 0 0 0 -30px;
   align-items: center;
-  line-height: 150%;
+  line-height: 180%;
+}
+
+.linhaProdutoLista {
+  min-width: 150px;
+  display: inline-block;
+}
+
+#lista li {
+border-bottom: #30BFB1 solid 1px;
+width: 200px;
 }
 
 ul li button {

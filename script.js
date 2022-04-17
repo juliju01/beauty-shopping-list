@@ -33,6 +33,7 @@ botao.addEventListener("click", (event) => {
   const valor = input.value;
   if (valor != "") {
     criaElementoNaLista(valor);
+    input.value = ""; //vai apagar o texto após digitado, vai entrar string vazia //
   } else {
     alert("Por favor, digite o nome do produto");
   }
@@ -43,6 +44,7 @@ function criaElementoNaLista(nomeDoProduto) {
   lista.appendChild(li);
 
   const span = document.createElement("span");
+  span.classList.add("linhaProdutoLista");
   span.innerText = nomeDoProduto;
 
   const checkbox = document.createElement("input");
@@ -71,12 +73,13 @@ function criaElementoNaLista(nomeDoProduto) {
   lista.append(popup);
 
   const valor = document.createElement("input");
-  valor.type = "number";
+  valor.type = "number"; 
+  valor.style.width = "150px"
 
   const botaoItemJaComprado = document.createElement("button");
 
   botaoItemJaComprado.type = "number";
-  botaoItemJaComprado.innerText = "Inserir o valor do produto (somente números, em reais)";
+  botaoItemJaComprado.innerText = "Inserir o valor do produto";
 
   popup.append(valor);
   popup.append(botaoItemJaComprado);
