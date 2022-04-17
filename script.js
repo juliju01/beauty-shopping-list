@@ -12,11 +12,6 @@ document.querySelector("#inserirproduto").addEventListener("click", () => {
   document.querySelector("#produtoDiv").style.display = "block";
 });
 
-document.querySelector("#calcular").addEventListener("click", () => {
-  escondeTodosAntesDeMostrar();
-  document.querySelector("#calcularDiv").style.display = "block";
-});
-
 function escondeTodosAntesDeMostrar() {
   document.querySelectorAll(".oculta").forEach((item) => {
     item.style.display = "none";
@@ -40,7 +35,6 @@ botao.addEventListener("click", (event) => {
 });
 
 function criaElementoNaLista(nomeDoProduto) {
-  importarGif(nomeDoProduto);
   const li = document.createElement("li");
   lista.appendChild(li);
 
