@@ -1,18 +1,4 @@
- // função para somar os produtos já comprados //
 
- const calculadora = document.querySelector("#somarTodosOsProdutos");
- 
- function somarValordeTodosOsProdutos(){ 
-   let soma = 0;
- 
-   arraySomaDosProdutos.forEach(nomeDoProduto) => {
-     soma += parseFloat(nomeDoProduto,preco)
-   });
- 
-   const resultadoFinalDaSoma = document.querySelectorAll
-   valorTotal = 'R$' + soma; 
- }
-  
 
 //Colocar um GIF do produto digitado//
 
@@ -33,3 +19,74 @@ gifDoProduto.src = urlFinal;
 return;
     }
  
+// Local Storage //
+
+const inputText = document.querySelector("#texto")
+const envia = document.querySelector("#envia")
+const recebe = document.querySelector("#recebe")
+
+let arrayLista;
+
+arrayLista.forEach((valorInterno)=>{
+  criaLI(valorInterno.valor)
+})
+
+
+let array = JSON.parse(localStorage.getItem("arrayLista"))
+if(array){
+    arrayLista = array
+}else{
+    arrayLista = []
+}
+
+envia.addEventListener("click",()=>{
+    const value = inputText.value;
+  
+    criaLI(value)
+
+    arrayLista.push({valor:value})
+    localStorage.setItem("arrayLista",JSON.stringify(arrayLista))
+})
+
+function criaLI(valorInterno){
+    const li = document.createElement("li")
+    li.innerText = valorInterno
+    recebe.append(li)
+}
+
+
+
+////
+
+
+localStorage.setItem('nomeDoProduto','li')
+
+const getLocalStoragename = localStorage.getItem('nomeDoProduto')
+
+console.log(getLocalStoragename);
+
+
+
+
+
+
+
+
+
+
+botaoItemJaComprado
+
+
+const calculadora = document.querySelector("#somarTodosOsProdutos");
+
+function somarValordeTodosOsProdutos(){ 
+  
+
+  arraySomaDosProdutos.forEach(nomeDoProduto => {
+    soma += parseFloat(nomeDoProduto.preco)
+  });
+
+  const resultadoFinalDaSoma = document.querySelector(".resultadoFinalDaSoma")
+  valorTotal = 'R$' + soma;
+  resultadoFinalDaSoma.innerText=valorTotal;
+}

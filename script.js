@@ -29,14 +29,25 @@ const input = document.querySelector("#itemParaInserir");
 const botao = document.querySelector("#addItemParaInserir");
 const lista = document.querySelector("#lista");
 
+botao.addEventListener("click", (event) => {
+  const valor = input.value;
+  if (valor != "") {
+    criaElementoNaLista(valor);
+  } else {
+    alert("Por favor, digite o nome do produto");
+  }
+});
+
 function criaElementoNaLista(nomeDoProduto) {
   const li = document.createElement("li");
   lista.appendChild(li);
 
   const span = document.createElement("span");
   span.innerText = nomeDoProduto;
+
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
+
   const botaoDeletar= document.createElement("button");
   botaoDeletar.innerText = "x";
 
@@ -63,6 +74,7 @@ function criaElementoNaLista(nomeDoProduto) {
   valor.type = "number";
 
   const botaoItemJaComprado = document.createElement("button");
+
   botaoItemJaComprado.type = "number";
   botaoItemJaComprado.innerText = "Inserir o valor do produto (somente números, em reais)";
 
@@ -74,52 +86,44 @@ function criaElementoNaLista(nomeDoProduto) {
     const preco = document.createElement("span");
     preco.innerText = "R$" + valor.value;
     span.style.textDecoration = "line-through";
+    realizaSoma(valor.value);
   });
 }
 
-// Evento que ficou fora da função acima. Se usuário digitar algo, cria elemente na lista //
-// Se não digitar produto, dispara o alerta //
+ // função para somar os produtos já comprados //
 
-botao.addEventListener("click", (event) => {
-  const valor = input.value;
-  if (valor != "") {
-    criaElementoNaLista(valor);
-  } else {
-    alert("Por favor, digite o nome do produto");
-  }
-});
+let soma = 0; 
 
-// LocalStorage, salvando as alterações do usuário no navegador //
-
-const inputText = document.querySelector("#texto")
-const envia = document.querySelector("#envia")
-const recebe = document.querySelector("#recebe")
-
-let arrayLista;
-
-arrayLista.forEach((valorInterno)=>{
-  criaLI(valorInterno.valor)
-})
-
-
-const array = JSON.parse(localStorage.getItem("arrayLista"))
-if(array){
-    arrayLista = array
-}else{
-    arrayLista = []
+function realizaSoma(novoValor){
+  novoValor = parseFloat(novoValor);
+  soma = soma + novoValor;    //esse valor de soma recebe o que era antes, em um momento que a função não sabe ainda o que vem //
+  const resultadoFinalDaSoma = document.querySelector(".resultadoFinalDaSoma");
+  resultadoFinalDaSoma.innerText = 'R$' + soma;
 }
 
-envia.addEventListener("click",()=>{
-    const value = inputText.value;
-  
-    criaLI(value)
+// LocalStorage, salvando os dados do usuário no LocalStorage do navegador //
 
-    arrayLista.push({valor:value})
-    localStorage.setItem("arrayDeLIS",JSON.stringify(arrayLista))
+const textoDoInput = document.querySelector("#itemParaInserir")
+
+function criaNovaLi(textoDoInput){
+  li.innerText = textoDoInput
+  textoDoInput.append(li)
+  arrayDaLista.forEach((textoDoInput)=>{
+  criaLI(span.valor)
+  })
+
+  addItemParaInserir.addEventListener("click",()=>{
+    const valorAtribuidoPeloUser = spanStorage.value;
+    criaNovaAli(valorAtribuidoPeloUser)
+    arrayDaLista.push({valor:valorAtribuidoPeloUser})
+    localStorage.setItem("arrayDaLista",JSON.stringify(arrayDaLista))
 })
+}
 
-function criaLI(valorInterno){
-    const li = document.createElement("li")
-    li.innerText = valorInterno
-    recebe.append(li)
+let arrayDaLista;
+let array = JSON.parse(localStorage.getItem("arrayDaLista"))
+if(array){
+    arrayDaLista = array
+}else{
+    arrayDaLista = []
 }
