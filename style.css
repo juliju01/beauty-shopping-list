@@ -22,7 +22,7 @@ header {
   top: 0px;
   margin: auto;
   position: fixed;
-  background-color: #82728c;
+  background-color: #766780;
   border-bottom: 3px solid #f2ae30;
   display: flex;
 }
@@ -112,6 +112,7 @@ nav#menu h1 {
 #adicionar-mae {
   width: 100%;
   height: auto;
+  min-height: 370px;
   margin: 120px 20px 20px 20px;
   display: flex;
   padding: 10px 10px 0 10px;
@@ -130,45 +131,23 @@ ul li button {
   font-size: 9pt;
   color:#3d3541;
   margin: 0.5px;
-  border-radius: 8%;
+  border-radius: 5%;
   background-color:#30BFB1;
   cursor: pointer;
   }
   
   ul li button:hover {
     background-color:#f2ae30;
-    border-radius: 8%;
+    border-radius: 5%;
     color:#3d3541;
     margin: 0.5px;
     transition: background-color 0.3s;
     font-weight: bold;
   }
 
-
-
-
-
-
-
-
-
-/* Total das compras que fica fixo na lateral direita */
-
-#totaldascompras {
-  flex: 1;
-  margin: 10px;
-}
-
-#inserirprodutonovo {
-  border-top: 2px solid rgba(120, 120, 120, 0.3);
-  height: 30%;
-  width: 100%;
-  display: flex;
-}
-
 /* Estilização do rodapé */
 
-#rodape {
+.rodape {
   width: 800px;
   height: 50px;
   margin: auto;
@@ -178,11 +157,33 @@ ul li button {
   display: flex;
 }
 
-#creditofinal {
+#creditoinicial {
   width: 800px;
   font-size: 8pt;
   color: #BF7A24;
   padding: 6px;
   vertical-align: middle;
   text-align: center;
+}
+
+#somatoria {
+  width: 800px;
+  color:#216969;
+  padding: 6px;
+  margin: 6pt 0 0 0;
+  vertical-align: middle;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.pretotal {
+  width: 10%;
+  font-size: 13pt;
+  font-weight: bold;
+}
+
+.resultadoFinalDaSoma {
+  width: 10%;
+  font-size: 14pt;
+  font-weight: bolder;
 }

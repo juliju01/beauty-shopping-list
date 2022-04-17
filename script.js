@@ -1,7 +1,5 @@
 // Beauty Shopping List //
 
-// Aplicação web para controle e cálculo de uma lista de compras //
-
 // Mostrar ou ocultar as div (página inicial / Iniciar ou completar lista //
 
 document.querySelector("#home").addEventListener("click", () => {
@@ -25,7 +23,7 @@ function escondeTodosAntesDeMostrar() {
   });
 }
 
-//Adicionando itens na lista//
+//Adicionando itens na lista //
 
 const input = document.querySelector("#itemParaInserir");
 const botao = document.querySelector("#addItemParaInserir");
@@ -79,6 +77,9 @@ function criaElementoNaLista(nomeDoProduto) {
   });
 }
 
+// Evento que ficou fora da função acima. Se usuário digitar algo, cria elemente na lista //
+// Se não digitar produto, dispara o alerta //
+
 botao.addEventListener("click", (event) => {
   const valor = input.value;
   if (valor != "") {
@@ -87,3 +88,38 @@ botao.addEventListener("click", (event) => {
     alert("Por favor, digite o nome do produto");
   }
 });
+
+// LocalStorage, salvando as alterações do usuário no navegador //
+
+const inputText = document.querySelector("#texto")
+const envia = document.querySelector("#envia")
+const recebe = document.querySelector("#recebe")
+
+let arrayLista;
+
+arrayLista.forEach((valorInterno)=>{
+  criaLI(valorInterno.valor)
+})
+
+
+const array = JSON.parse(localStorage.getItem("arrayLista"))
+if(array){
+    arrayLista = array
+}else{
+    arrayLista = []
+}
+
+envia.addEventListener("click",()=>{
+    const value = inputText.value;
+  
+    criaLI(value)
+
+    arrayLista.push({valor:value})
+    localStorage.setItem("arrayDeLIS",JSON.stringify(arrayLista))
+})
+
+function criaLI(valorInterno){
+    const li = document.createElement("li")
+    li.innerText = valorInterno
+    recebe.append(li)
+}
