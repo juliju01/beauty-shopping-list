@@ -40,6 +40,7 @@ botao.addEventListener("click", (event) => {
 });
 
 function criaElementoNaLista(nomeDoProduto) {
+  importarGif(nomeDoProduto);
   const li = document.createElement("li");
   lista.appendChild(li);
 
@@ -102,31 +103,4 @@ function realizaSoma(novoValor){
   soma = soma + novoValor;    //esse valor de soma recebe o que era antes, em um momento que a função não sabe ainda o que vem //
   const resultadoFinalDaSoma = document.querySelector(".resultadoFinalDaSoma");
   resultadoFinalDaSoma.innerText = 'R$' + soma;
-}
-
-// LocalStorage, salvando os dados do usuário no LocalStorage do navegador //
-
-const textoDoInput = document.querySelector("#itemParaInserir")
-
-function criaNovaLi(textoDoInput){
-  li.innerText = textoDoInput
-  textoDoInput.append(li)
-  arrayDaLista.forEach((textoDoInput)=>{
-  criaLI(span.valor)
-  })
-
-  addItemParaInserir.addEventListener("click",()=>{
-    const valorAtribuidoPeloUser = spanStorage.value;
-    criaNovaAli(valorAtribuidoPeloUser)
-    arrayDaLista.push({valor:valorAtribuidoPeloUser})
-    localStorage.setItem("arrayDaLista",JSON.stringify(arrayDaLista))
-})
-}
-
-let arrayDaLista;
-let array = JSON.parse(localStorage.getItem("arrayDaLista"))
-if(array){
-    arrayDaLista = array
-}else{
-    arrayDaLista = []
 }
