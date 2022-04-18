@@ -69,7 +69,7 @@ function criaElementoNaLista(nomeDoProduto) {
 
   const valor = document.createElement("input");
   valor.type = "number"; 
-  valor.style.width = "150px"
+  valor.style.width = "150px";
 
   const botaoItemJaComprado = document.createElement("button");
 

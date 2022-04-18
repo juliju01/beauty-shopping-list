@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
     <!--cabeçalho e menu-->
     <div class="interface">
       <header>
@@ -23,10 +24,10 @@
           <ul type="disc">
             <li><button id="home">Página inicial</button></li>
             <li><button id="inserirproduto">Iniciar ou completar lista</button></li>
-            <li><button id="quemsomos"> Quem somos</button></li>
           </ul>
         </nav>
       </header>
+
       <!--apresentação da lista de compras-->
       <div id="inicialDiv" class="oculta">
         <section>
@@ -48,6 +49,7 @@
             </div>
           </div>
         </section>
+
         <!--rodapé na página inicial-->
         <footer>
           <div class="rodape">
@@ -57,6 +59,7 @@
           </div>
         </footer>
       </div>
+
       <!--inserindo produtos na lista-->
       <div id="produtoDiv" class="oculta" style="display: none">
         <div class="interface">
@@ -72,13 +75,10 @@
        <div class="rodape">
           <div id="somatoria">
             <div class="pre-total"> Total das compras: </div>
-            <div class="resultadoFinalDaSoma">  </div>
+            <div class="resultadoFinalDaSoma"></div>
           </div>
        </div>
-    <!--Calcular total-->
-    <div id="calcularDiv" class="oculta" style="display: none">
-      Calcular total R$ 00,00
-    </div>
+  
     <script src="script.js"></script>
   </body>
 </html>
