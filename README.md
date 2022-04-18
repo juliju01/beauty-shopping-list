@@ -9,6 +9,10 @@ DEVinHouse é um programa de formação de talentos, com uma proposta inovadora,
 # Objetivo
 Criação de uma aplicação web para controle e cálculo de uma lista de compras.
 
+<img width="1023" alt="bsp1" src="https://user-images.githubusercontent.com/102731743/163742895-cf69936f-20be-4619-b0af-f40cc3c9c952.png">
+
+<img width="1012" alt="bsp2" src="https://user-images.githubusercontent.com/102731743/163742905-35d3ce37-c8a0-4a88-9006-10eea8aa1020.png">
+
 # Requisitos da aplicação
 A aplicação deve ser codificada em html, css e javascript. Deve conter os seguintes requisitos:
 1.	Um título na aba do navegador, para que o usuário encontre a sua aplicação no meio das várias abas que constantemente mantém abertas.
